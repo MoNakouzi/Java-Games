@@ -2,12 +2,14 @@
 
 To try out the game without downloading the source code, the JAR and EXE files provided in a separate folder in this repo work. However, if the source code is downloaded, you can just compile and run the code (in an IDE or otherwise), and a JAR pop-up window will show up as this game is all within a JFrame.
 Please share any errors found or suggestions to make this game better.
+<br/>
 
 # About This Game
 
 As a personal project, I made this Brick Breaker game made fully in Java using object-oriented design. The game is built with different game modes, where players can 
 choose between a goal of breaking 50 bricks or 100 bricks, with an extra mode with infinite bricks. The game supports both 1-player and 2-players gameplay, each with 
 their own controls.
+<br/>
 
 # Building Blocks And Design
 
@@ -40,5 +42,5 @@ If the state was not one of the run states and not the pause state, then the gam
 If the state was the pause state, the functions freezing the gameplay are called to make sure that the ball stays stationary as the game is paused. The repaint function is also called.
 
 The functionality during the running states are due to 2 main functions in the GamePanel class:
-- move():
-- checkCollision():
+- move(): This function calls the move() function within the Paddle and Ball class to move them a set number of pixels with each frame. It checks for 2-players mode and moves the second ball and paddle accordingly.
+- checkCollision(): This checks the collision of the paddles with the edge of screen, the ball with paddles and the edges of the screen, and the ball with the bricks. The direction/speed of each is adjusted according to the nature of the collision. THe collision of the ball with the paddles/bricks is done by .instersects, as they all extend the Java Rectangle class. Upon the ball's collision with the bricks, the value of the brick in the map is updated to True. When the value is true and the brick class is repainted by the game loop, the brick is no longer drawn/detected (due to functionality in the Brick class). This allows the program to keep track of which bricks are destroyed and stop drawing them.
