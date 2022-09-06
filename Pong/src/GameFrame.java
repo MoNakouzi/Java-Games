@@ -7,6 +7,7 @@ public class GameFrame extends JFrame
 
     public GameFrame()
     {
+        //This created a new panel
         panel = new GamePanel();
         this.setTitle("Pong Game");
         this.setBackground(Color.black);
