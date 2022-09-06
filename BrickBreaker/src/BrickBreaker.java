@@ -4,6 +4,7 @@ public class BrickBreaker
     {
         try
         {
+            // This runs the game
             new GameFrame();
         }
         catch (Exception e)
